@@ -1,39 +1,29 @@
-
+/**
+ * 
+ * @author luggi
+ *
+ */
 public class Spielfigur {
-	private String art;
-	private char symbol;
-	private boolean sichtbar;
+	protected char symbol;
+	protected boolean ansicht;
+	protected int postion;
 
-	public Spielfigur(String art) {
-		this.setArt(art);
-		sichtbar=true;
-	}
-	public Spielfigur(String art, char symbol) {
-		this.setArt(art);
+	/**
+	 * 
+	 * @param symbol
+	 */
+	public Spielfigur(char symbol) {
 		this.setSymbol(symbol);
-		sichtbar=true;
 	}
 
-	public Spielfigur kaempfen(Spielfigur spielfigur2) {
-		// TODO kämpfen irgendwie
-		return null;
+	public boolean isAnsicht() {
+		return ansicht;
 	}
 
-	public boolean isSichtbar() {
-		return sichtbar;
+	public void setAnsicht(boolean ansicht) {
+		this.ansicht = ansicht;
 	}
 
-	public void setSichbar(boolean sichtbar) {
-		this.sichtbar = sichtbar;
-	}
-
-	public String getArt() {
-		return art;
-	}
-
-	public void setArt(String s) {
-		this.art = s;
-	}
 
 	public char getSymbol() {
 		return symbol;
@@ -43,12 +33,4 @@ public class Spielfigur {
 		this.symbol = symbol;
 	}
 
-	@Override
-	public String toString() {
-		if (sichtbar) {
-			return "" + this.getSymbol() + "" + this.getArt();
-		} else {
-			return "" + this.getSymbol();
-		}
-	}
 }

@@ -14,17 +14,8 @@ public class TestMain {
 
 
 		board.printxy();
-		board.printSpielFled();
 		
-		String lol="Hallo was geht";
-		String apfel=" was get";
 		
-		StringBuffer s = new StringBuffer();
-		
-		s.append(lol);
-		s.append(apfel);
-		
-		System.out.println(s);
 
 	}
 
