@@ -1,7 +1,11 @@
 
 public class ComputerSpieler extends Spieler {
 
-	public ComputerSpieler(String lvl){
-		setName("Computer"+lvl);
+	public ComputerSpieler(SpielFeld board,String lvl){
+		super(board);
+		setName("Computer "+lvl);
+	
 	}
+	
+	//TODO Ki entwickeln...
 }

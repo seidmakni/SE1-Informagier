@@ -5,13 +5,10 @@ public class Beweglich extends Spielfigur {
 
 	public Beweglich(char symbol) {
 		super(symbol);
-		sichtbar = true;
+		
 	}
 
 	public boolean bewegen(String richtung) {
-		// TODO tausen abfragen ob das möfglich ist bei feindkontakt kämpfen und sonst
-		// false
-		// if abfrage ob falle oder flagge (bewegen und angreifen)
 		
 		return false;
 	}

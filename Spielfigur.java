@@ -1,6 +1,6 @@
 /**
  * 
- * @author luggi
+ * @author lukas
  *
  */
 public class Spielfigur {
@@ -8,12 +8,14 @@ public class Spielfigur {
 	protected boolean ansicht;
 	protected int postion;
 
+
 	/**
 	 * 
 	 * @param symbol
 	 */
 	public Spielfigur(char symbol) {
 		this.setSymbol(symbol);
+		this.ansicht=true;
 	}
 
 	public boolean isAnsicht() {
@@ -32,5 +34,13 @@ public class Spielfigur {
 	public void setSymbol(char symbol) {
 		this.symbol = symbol;
 	}
+	public int getPostion() {
+		return postion;
+	}
+
+	public void setPostion(int postion) {
+		this.postion = postion;
+	}
+
 
 }

@@ -1,12 +1,12 @@
 
 public class MenschlicherSpieler extends Spieler {
 	
-	public MenschlicherSpieler() {
-		super();
+	public MenschlicherSpieler(SpielFeld board) {
+		super(board);
 	}
 
-	public MenschlicherSpieler(String name) {
-		super(name);
+	public MenschlicherSpieler(SpielFeld board,String name) {
+		super(board,name);
 	}
 
 }
