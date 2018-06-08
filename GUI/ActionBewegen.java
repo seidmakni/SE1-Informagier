@@ -34,7 +34,7 @@ public class ActionBewegen implements ActionListener {
 		} else {
 			player.einheitBewegen(spielfigur, c);
 			frame2.setVisible(false);
-			//game.welchselSpieler();
+			game.welchselSpieler();
 		}
 	}
 

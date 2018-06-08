@@ -101,6 +101,7 @@ public class SpielFeld {
 		}
 		return container;
 	}
+
 	/**
 	 * 
 	 * @return Spielfeld mit Figuren
@@ -120,12 +121,12 @@ public class SpielFeld {
 			c++;
 		}
 		System.out.println();
-		for (int i = feld.length-1; i >= 0; i--) {
+		for (int i = feld.length - 1; i >= 0; i--) {
 			if (counter != 5)
 				System.out.println();
 			System.out.print(counter);
 			counter--;
-			for (int j = 0; j <feld[i].length; j++) {
+			for (int j = 0; j < feld[i].length; j++) {
 				System.out.printf("%10s", feld[i][j]);
 
 			}
@@ -147,14 +148,20 @@ public class SpielFeld {
 		return feld[i][j];
 
 	}
-	
+
 	public void dreheFeld() {
-		
-		for(int i=0; i<feld.length/2; i++) {
-			for(int j=0; j<feld[i].length; j++) {
+		for (int i = 0; i < feld.length / 2; i++) {
+			for (int j = 0; j < feld[i].length; j++) {
+				if (feld[i][j] != null) {
+					feld[i][j].setPostion((feld.length - 1 - i) * 10 + feld[i].length - 1 - j);
+				}
+				if (feld[feld.length - 1 - i][feld[i].length - 1 - j] != null) {
+					feld[feld.length - 1 - i][feld[i].length - 1 - j].setPostion(i * 10 + j);
+				}
+
 				Spielfigur x = feld[i][j];
-				feld[i][j]= feld[feld.length-1-i][feld[i].length-1-j];
-				feld[feld.length-1-i][feld[i].length-1-j]= x;
+				feld[i][j] = feld[feld.length - 1 - i][feld[i].length - 1 - j];
+				feld[feld.length - 1 - i][feld[i].length - 1 - j] = x;
 			}
 		}
 	}

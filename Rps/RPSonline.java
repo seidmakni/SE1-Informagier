@@ -21,6 +21,7 @@ public class RPSonline {
 		else {
 			amZug=0;
 		}
+
 		feld.dreheFeld();
 	}
 	
@@ -36,9 +37,5 @@ public class RPSonline {
 		return feld.getFeld();
 	}
 	
-	public SpielFeld gebeSpielfeld(){
-		return feld;
-	}
-
 
 }

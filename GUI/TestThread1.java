@@ -39,8 +39,8 @@ public class TestThread1 implements Runnable {
 			buchstabe = 5;
 			game.getSpieler().setztFalle(zahl, buchstabe);
 
-			game.start();
 			game.welchselSpieler();
+			game.start();
 
 			MainFrame frame = new MainFrame(game);
 			frame.refresh(game);
@@ -51,7 +51,7 @@ public class TestThread1 implements Runnable {
 				frame.refresh(game);
 
 				try {
-					Thread.currentThread().sleep(1000);
+					Thread.currentThread().sleep(500);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

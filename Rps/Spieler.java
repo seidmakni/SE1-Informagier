@@ -15,9 +15,9 @@ public abstract class Spieler {
 		// zaehlt die erzeugten instanzen der Klasse gerade="O" symbol ungerade="X"
 		// symbol
 		if (instanzZeahler % 2 == 0) {
-			symbol = 'X';
-		} else {
 			symbol = 'O';
+		} else {
+			symbol = 'X';
 		}
 		instanzZeahler++;
 	}
