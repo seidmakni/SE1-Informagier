@@ -42,14 +42,14 @@ public abstract class Spieler {
 	 */
 	public String[] einheitAusweahlen(Spielfigur spielfigur) {
 		String[] auswahl;
-		if (spielfigur instanceof Beweglich) {
+		if (spielfigur instanceof Beweglich&&this.symbol==spielfigur.symbol) {
 			String s= ((Beweglich) spielfigur).gebeAuswahl(feld);
 			auswahl=s.split(Pattern.quote("|"));
 			return auswahl;
 		
 		} else {
 			auswahl=new String[1];
-			auswahl[0]= "Dies ist keine Bewegliche Figur";
+			auswahl[0]= "-";
 			return auswahl;
 		}
 

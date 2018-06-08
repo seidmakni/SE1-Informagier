@@ -9,13 +9,15 @@ import Rps.*;
 public class ActionAuswahl implements ActionListener {
 	private Spieler player;
 	private Spielfigur spielfigur;
-
+	private RPSonline game;
+	
 	public ActionAuswahl() {
 
 	}
 
-	public ActionAuswahl(Spieler player, Spielfigur spielfigur) {
-		this.player = player;
+	public ActionAuswahl(RPSonline game,Spielfigur spielfigur) {
+		this.game=game;
+		this.player = game.getSpieler();
 		this.spielfigur = spielfigur;
 	}
 
@@ -35,22 +37,25 @@ public class ActionAuswahl implements ActionListener {
 		for (int i = 0; i < buttons.length; i++) {
 			buttons[i] = new Button(auswahl[i]);
 			buttons[i].setPreferredSize(new Dimension(60, 60));
-			System.out.println(auswahl[i]);
 			// TODO Button action
 			if (auswahl[i].equals("W")) {
-				buttons[i].addActionListener(new ActionBewegen(player,spielfigur,frame2));
+				buttons[i].addActionListener(new ActionBewegen(game,spielfigur,buttons[i].getName(),frame2));
 				panel.add(buttons[i], java.awt.BorderLayout.PAGE_START);
 			}
 			if (auswahl[i].equals("A")) {
+				buttons[i].addActionListener(new ActionBewegen(game,spielfigur,buttons[i].getName(),frame2));
 				panel.add(buttons[i], java.awt.BorderLayout.LINE_START);
 			}
 			if (auswahl[i].equals("S")) {
+				buttons[i].addActionListener(new ActionBewegen(game,spielfigur,buttons[i].getName(),frame2));
 				panel.add(buttons[i], java.awt.BorderLayout.CENTER);
 			}
 			if (auswahl[i].equals("D")) {
+				buttons[i].addActionListener(new ActionBewegen(game,spielfigur,buttons[i].getName(),frame2));
 				panel.add(buttons[i], java.awt.BorderLayout.LINE_END);
 			}
 			if (auswahl[i].equals("ESC")) {
+				buttons[i].addActionListener(new ActionBewegen(game,spielfigur,buttons[i].getName(),frame2));
 				panel.add(buttons[i], java.awt.BorderLayout.PAGE_END);
 			}
 

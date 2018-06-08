@@ -31,7 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
 			buttons[i] = new Button[feld[i].length];
 		}
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		for (int i = 0; i < buttons.length; i++) {
+		for (int i = buttons.length-1;i>=0; i--) {
 			for (int j = 0; j < buttons[i].length; j++) {
 				buttons[i][j] = new Button(String.format("%10s", ""));
 				buttons[i][j].setPreferredSize(new Dimension(100,50));
@@ -47,26 +47,26 @@ public class MainFrame extends javax.swing.JFrame {
 		Spielfigur[][] feld = game.gebeFeld();
 		JPanel panel = new JPanel();
 		
-		for (int i = 0; i < buttons.length; i++) {
+		for (int i = buttons.length-1;i>=0; i--) {
 			for (int j = 0; j < buttons[i].length; j++) {
 				
 				if (feld[i][j] != null) {
 					if (feld[i][j] instanceof Stein) {
 						buttons[i][j] = new Button((Stein) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
-						buttons[i][j].addActionListener(new ActionAuswahl(game.getSpieler(),feld[i][j]));
+						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Schere) {
 						buttons[i][j] = new Button((Schere) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
-						buttons[i][j].addActionListener(new ActionAuswahl(game.getSpieler(),feld[i][j]));
+						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Papier) {
 						buttons[i][j] = new Button((Papier) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
-						buttons[i][j].addActionListener(new ActionAuswahl(game.getSpieler(),feld[i][j]));
+						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Flagge) {

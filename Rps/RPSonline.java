@@ -35,6 +35,10 @@ public class RPSonline {
 	public Spielfigur[][] gebeFeld(){
 		return feld.getFeld();
 	}
+	
+	public SpielFeld gebeSpielfeld(){
+		return feld;
+	}
 
 
 }

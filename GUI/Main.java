@@ -19,36 +19,8 @@ public class Main {
 		Scanner eingabeName2=new Scanner(System.in);
 		String name2=eingabeName1.next();
 	*/	
-		
-		RPSonline game= new RPSonline(2,"likas","janikk");
-	    
-	    
-	    //while schleife
-	    
-	    //buttons die variable zahl buchstabe beeinflussen
-	    int zahl=0;
-	    int buchstabe=0;
-	    game.getSpieler().setztFlagge(zahl, buchstabe);
-	    zahl=0;
-	    buchstabe=1;
-	    game.getSpieler().setztFalle(zahl, buchstabe);
-	    
-	    zahl=0;
-	    buchstabe=0;
-	    game.welchselSpieler();
-	    game.getSpieler().setztFlagge(zahl, buchstabe);
-	    zahl=0;
-	    buchstabe=5;
-	    game.getSpieler().setztFalle(zahl, buchstabe);
-	    
-	    game.start();
-	    game.welchselSpieler();
-	 	    
-	    
-	    MainFrame frame=new MainFrame(game);
-	    frame.refresh(game);
-	    
-	    
+		Thread test1=new Thread(new TestThread1());
+	    test1.start();
 	  
 	}
 
