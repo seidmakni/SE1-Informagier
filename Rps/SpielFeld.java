@@ -109,9 +109,25 @@ public class SpielFeld {
 	public Spielfigur[][] getFeld() {
 		return this.feld;
 	}
-
+/**
+ * Macht alle spielfiguren eines Symbols sichbar
+ * @param symbol des Spielers
+ */
+	public void macheSichbar(char symbol) {
+		for(int i=0;i<feld.length;i++) {
+			for(int j=0;j<feld[i].length;j++) {
+				if(feld[i][j]!=null) {
+					if(feld[i][j].getSymbol()==symbol) {
+						feld[i][j].setAnsicht(true);
+					}else {
+						feld[i][j].setAnsicht(false);
+					}
+				}
+			}
+		}
+	}
 	/**
-	 * gebe Spielfeld aus
+	 * gebe Spielfeld auf der console aus
 	 */
 	public void printxy() {
 		int counter = 5;
@@ -149,6 +165,9 @@ public class SpielFeld {
 
 	}
 
+	/**
+	 * dreht das feld 
+	 */
 	public void dreheFeld() {
 		for (int i = 0; i < feld.length / 2; i++) {
 			for (int j = 0; j < feld[i].length; j++) {

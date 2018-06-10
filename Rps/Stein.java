@@ -22,5 +22,12 @@ public class Stein extends Beweglich {
 		return String.format("%10s",""+this.getSymbol());
 
 	}
+	@Override
+	public boolean equals(Object o) {
+		if(o==null)return false;
+		if(o instanceof Stein) {
+			return true;
+		}return false;
+	}
 
 }

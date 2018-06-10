@@ -16,7 +16,6 @@ public class Spielfigur {
 	 */
 	public Spielfigur(char symbol) {
 		this.setSymbol(symbol);
-		this.ansicht=true;
 	}
 
 	public boolean isAnsicht() {

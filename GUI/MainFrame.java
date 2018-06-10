@@ -23,6 +23,10 @@ public class MainFrame extends javax.swing.JFrame {
 
 	}
 
+	/**
+	 * initalisiert das Spielfeld mit BUttons
+	 * @param game
+	 */
 	private void initComponents(RPSonline game) {
 		Spielfigur[][] feld = game.gebeFeld();
 		JPanel panel = new JPanel();
@@ -33,7 +37,7 @@ public class MainFrame extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		for (int i = buttons.length-1;i>=0; i--) {
 			for (int j = 0; j < buttons[i].length; j++) {
-				buttons[i][j] = new Button(String.format("%10s", ""));
+				buttons[i][j] = new Button(String.format("%10s", i+""+j));
 				buttons[i][j].setPreferredSize(new Dimension(100,50));
 				panel.add(buttons[i][j]);
 			}
@@ -42,6 +46,10 @@ public class MainFrame extends javax.swing.JFrame {
 		this.add(panel1);
 	}
 
+	/**
+	 * akktuellisiert das Spielfeld
+	 * @param game
+	 */
 	public void refresh(RPSonline game) {
 		this.remove(panel1);
 		Spielfigur[][] feld = game.gebeFeld();
@@ -50,33 +58,63 @@ public class MainFrame extends javax.swing.JFrame {
 		for (int i = buttons.length-1;i>=0; i--) {
 			for (int j = 0; j < buttons[i].length; j++) {
 				
-				if (feld[i][j] != null) {
+				if (feld[i][j] != null) {		
 					if (feld[i][j] instanceof Stein) {
 						buttons[i][j] = new Button((Stein) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
 						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
+						if(feld[i][j].getSymbol()=='X') {
+							buttons[i][j].setBackground(Color.red);
+						}
+						if(feld[i][j].getSymbol()=='O') {
+							buttons[i][j].setBackground(Color.cyan);
+						}
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Schere) {
 						buttons[i][j] = new Button((Schere) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
 						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
+						if(feld[i][j].getSymbol()=='X') {
+							buttons[i][j].setBackground(Color.red);
+						}
+						if(feld[i][j].getSymbol()=='O') {
+							buttons[i][j].setBackground(Color.cyan);
+						}
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Papier) {
 						buttons[i][j] = new Button((Papier) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
 						buttons[i][j].addActionListener(new ActionAuswahl(game,feld[i][j]));
+						if(feld[i][j].getSymbol()=='X') {
+							buttons[i][j].setBackground(Color.red);
+						}
+						if(feld[i][j].getSymbol()=='O') {
+							buttons[i][j].setBackground(Color.cyan);
+						}
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Flagge) {
 						buttons[i][j] = new Button((Flagge) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
+						if(feld[i][j].getSymbol()=='X') {
+							buttons[i][j].setBackground(Color.red);
+						}
+						if(feld[i][j].getSymbol()=='O') {
+							buttons[i][j].setBackground(Color.cyan);
+						}
 						panel.add(buttons[i][j]);
 					}
 					if (feld[i][j] instanceof Falle) {
 						buttons[i][j] = new Button((Falle) feld[i][j]);
 						buttons[i][j].setPreferredSize(new Dimension(100,50));
+						if(feld[i][j].getSymbol()=='X') {
+							buttons[i][j].setBackground(Color.red);
+						}
+						if(feld[i][j].getSymbol()=='O') {
+							buttons[i][j].setBackground(Color.cyan);
+						}
 						panel.add(buttons[i][j]);
 					}
 				} else {

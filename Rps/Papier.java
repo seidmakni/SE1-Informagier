@@ -22,4 +22,11 @@ public class Papier extends Beweglich{
 		return String.format("%10s",""+this.getSymbol());
 
 	}
+	@Override
+	public boolean equals(Object o) {
+		if(o==null)return false;
+		if(o instanceof Papier) {
+			return true;
+		}return false;
+	}
 }
